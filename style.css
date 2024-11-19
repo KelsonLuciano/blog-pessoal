@@ -1,28 +1,85 @@
 body {
     border: 0;
     margin: 0;
-    background-color: rgb(0, 37, 37);
+    background: #202947;
     color: aliceblue;
 }
 
 .menu_nav {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
     background-color: rgb(0, 0, 0);
-
+    margin-right: 85%;
 }
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
 
 #inicio {
     position: absolute;
     bottom: 5%;
     right: 5%;
     border-radius: 50%;
-    background-color: rgba(1, 59, 59, 0.534);
-    width: 3%;
-    height: 5vh;
-    border: 1px black solid;
-    box-shadow: 10px 10px black;
+    background-color: #202436;
+    width: 2%;
+    height: 4vh;
+    border: 0px;
 }
+
+#inicio::before {
+    content: "";
+    width: 111%;
+    height: 105%;
+    border-radius: 100%;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -2%;
+      left: -4.5%;
+      animation: spin 2s linear infinite;
+  }
+
+#inicio::after {
+  position: absolute;
+  content: "";
+  border-radius: 100%;
+  top: calc(var(--inicio-height) / 6);
+  top: -2%;
+  left: -6%;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(10px);
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
 
 #flecha {
     width: 75%;
