@@ -1,22 +1,82 @@
 body {
     border: 0;
     margin: 0;
+    min-height: 200vh;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
     background: #202947;
-    color: aliceblue;
 }
 
-.menu_nav {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    background-color: rgb(0, 0, 0);
-    margin-right: 85%;
+.titulo {
+  margin-left: -15%;
 }
 
-.titulo{
-    display: flex;
-    justify-content: center;
-    
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.7s;
+  padding: 30px 100px;
+  background-color: #202947;
+}
+
+header.sticky {
+  padding: 7px 100px;
+  background: white;
+}
+
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.7s;
+}
+
+header nav ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul li {
+  position: relative;
+  list-style: none;
+}
+
+header nav ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 700px;
+  transition: 0.7s;
+}
+
+header nav ul li a:hover {
+  color: #999;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+  color: #202947;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: url(background.jpg);
+  background-size: cover;
 }
 
 @property --rotate {
@@ -26,7 +86,7 @@ body {
   }
 
 #inicio {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
     right: 5%;
     border-radius: 50%;
@@ -38,29 +98,28 @@ body {
 
 #inicio::before {
     content: "";
-    width: 111%;
-    height: 105%;
+    width: 2%;
+    height: 4vh;
     border-radius: 100%;
     background-image: linear-gradient(
       var(--rotate)
       , #5ddcff, #3c67e3 43%, #4e00c2);
-      position: absolute;
+      position: fixed;
       z-index: -1;
-      top: -2%;
-      left: -4.5%;
+      bottom: 5%;
+      right: 5%;
       animation: spin 2s linear infinite;
   }
 
 #inicio::after {
-  position: absolute;
+  position: fixed;
   content: "";
   border-radius: 100%;
-  top: calc(var(--inicio-height) / 6);
-  top: -2%;
-  left: -6%;
+  bottom: 5%;
+  right: 5%;
   z-index: -1;
-  height: 100%;
-  width: 100%;
+  width: 2%;
+  height: 4vh;
   margin: 0 auto;
   transform: scale(0.8);
   filter: blur(10px);
