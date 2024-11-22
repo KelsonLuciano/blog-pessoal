@@ -7,10 +7,6 @@ body {
     background: #202947;
 }
 
-.titulo {
-  margin-left: -15%;
-}
-
 header {
   position: sticky;
   top: 0;
@@ -20,12 +16,12 @@ header {
   justify-content: space-evenly;
   align-items: center;
   transition: 0.7s;
-  padding: 30px 100px;
+  padding: 30px 0px;
   background-color: #202947;
 }
 
 header.sticky {
-  padding: 7px 100px;
+  padding: 7px 0px;
   background: white;
 }
 
