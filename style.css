@@ -69,7 +69,15 @@ header nav ul li a {
 .topicos a:hover{
   opacity: 1;
   color: #fff;
+}
 
+header.sticky .topicos:hover a {
+  color: #202947;
+}
+
+/* Ajuste para o fundo branco do header */
+header.sticky .menu-icon {
+  color: #202947;
 }
 
 .menu-icon {
@@ -82,6 +90,7 @@ header nav ul li a {
 
 #menu-toggle:checked ~ .topicos {
   transform: scale(1, 1);
+  transition: transform 0.7s ease-in-out, background-color 0.7s ease;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -96,8 +105,7 @@ header nav ul li a {
     z-index: 1;
     transform: scale(1, 0);
     transform-origin: top;
-    transition: transform 0.7s ease-in-out;
-    transition: background-color 0.7s ease;
+    transition: transform 0.7s ease-in-out, background-color 0.7s ease;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
 
@@ -140,10 +148,39 @@ header.sticky ul li a {
   height: 25vh;
   width: 25%;
   border-radius: 100%;
+  box-shadow: 0.5px 0px 10px 2px rgba(255, 255, 255, 0.432);
+  animation: rotate-shadow 2s linear infinite;
+}
+
+@keyframes rotate-shadow {
+  0% {
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+  }
+  25% {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5);
+  }
+  75% {
+    box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+  }
 }
 
 #resumo {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-style: normal;
+}
+
+.cumprimento-text {
+  font-size: 2rem; 
+  font-weight: 600; 
+  color: #ffffff; 
+  letter-spacing: 2px;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
